@@ -1,3 +1,1 @@
-# blog
-try
-test
+my blog
