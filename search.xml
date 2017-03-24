@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F03%2F23%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[如何下载快速国外资源]]></title>
+      <url>%2F2017%2F03%2F23%2F%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E5%BF%AB%E9%80%9F%E5%9B%BD%E5%A4%96%E8%B5%84%E6%BA%90%2F</url>
+      <content type="text"><![CDATA[在下载一些国外资源时，常常会遇到一些让人头疼的事，比如：下载了老半天，似乎资源怎么也下不下来，网速只有每秒几十K甚至十几K，这龟速常常让人抓狂。那么，有没有什么比较快的后门呢？有人说用下载软件什么的，但是在资源较少的情况下，下载器也束手无措；有人说用VPN代理，这不失为一种很好的办法，但是还要注册帐号、流量费、月费什么的。对于懒人来说，这够头疼的了。testtest]]></content>
+    </entry>
+
+    
+  
+  
+</search>
