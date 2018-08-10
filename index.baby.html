@@ -8,14 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
-/*	.center {
-        position: absolute;
-        left: 50%;
-        -ms-transform: translate(-50%,-50%);
-        -moz-transform: translate(-50%,-50%);
-        -o-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%); 
-    }*/
 .vid-wrap{
     width:100%;background: #000;
     position:relative;
@@ -33,10 +25,7 @@
 </style>
 </head>
 <body>
-<!-- 	<div class="center videoContainer">
-	</div> -->
-<div class="vid-wrap"></div
-
+    <div class="vid-wrap"></div>
 </body>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -45,7 +34,6 @@
         var urls = data.split("\n");
         var html = '';
         for (var i = urls.length - 1; i >= 0; i--) {
-            // html += '<div><video width="160" src="'+domain+urls[i]+'" controls="controls"></video></div>';
             html += ' <video controls autoplay loop><source src="'+domain+urls[i]+'" type="video/mp4"></video>';
         }
         $('.vid-wrap').html(html);
