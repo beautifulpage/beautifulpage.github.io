@@ -34,7 +34,7 @@
         var urls = data.split("\n");
         var html = '';
         for (var i = urls.length - 1; i >= 0; i--) {
-            html += ' <video controls autoplay loop><source src="'+domain+urls[i]+'" type="video/mp4"></video>';
+            html += '<div><video controls loop preload="none"><source src="'+domain+urls[i]+'" type="video/mp4"></video></div>';
         }
         $('.vid-wrap').html(html);
       });
