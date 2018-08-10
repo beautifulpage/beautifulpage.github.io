@@ -10,6 +10,7 @@
 <style type="text/css">
 	.center {
         position: absolute;
+        left: 50%;
         -ms-transform: translate(-50%,-50%);
         -moz-transform: translate(-50%,-50%);
         -o-transform: translate(-50%,-50%);
@@ -27,11 +28,12 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function(){
+        var domain = 'http://on5ldvklg.bkt.clouddn.com/';
        $.get('./baby/baby.text', function(data) {
         var urls = data.split("\n");
         var html = '';
         for (var i = urls.length - 1; i >= 0; i--) {
-            html += '<div><video src="'+urls[i]+'" controls="controls"></video></div>';
+            html += '<div><video src="'+domain+urls[i]+'" controls="controls"></video></div>';
         }
         $('.videoContainer').html(html);
       });
