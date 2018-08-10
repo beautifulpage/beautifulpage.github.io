@@ -11,7 +11,6 @@
 .wrapper{
     width:100%;background: #000;
     position:relative;
-    /*padding-top: 5px;*/
     margin-top: 5px;
     padding-bottom:56.25%;
 }
@@ -35,7 +34,7 @@
             var count = urls.length;
             var html = '';
             for (var i=0;i<count-1;i++) {
-                html += '<div class="wrapper"><video id="videoId"'+i+'" controls preload="meta" src="'+domain+urls[i]+'"></video></div>';
+                html += '<div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="'+domain+urls[i]+'"></video></div>';
             }
             $('.container').html(html);
             for(var j=0;j<count-1;j++) {
@@ -50,6 +49,23 @@
                 })
             }
         });
+            // var count = 3;
+            // var html = '';
+            // for (var i=0;i<count-1;i++) {
+            //     html += '<div><div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="http://on5ldvklg.bkt.clouddn.com/baby/video/201808/75003EF7E50632A279865343476FE562.mp4"></video></div></div>';
+            // }
+            // $('.container').html(html);
+            // for(var j=0;j<count-1;j++) {
+            //     $("#videoId"+j).on("loadeddata", function (e) {
+            //         var obj = e.target;
+            //         var scale = 0.8;
+            //         var canvas = document.createElement("canvas");
+            //         canvas.width = obj.videoWidth * scale;
+            //         canvas.height = obj.videoHeight * scale;
+            //         canvas.getContext('2d').drawImage(obj, 0, 0, canvas.width, canvas.height);
+            //         obj.setAttribute("poster", canvas.toDataURL("image/png"));
+            //     })
+            // }
     });
 </script>
 </html>
