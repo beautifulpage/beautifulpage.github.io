@@ -32,7 +32,7 @@
         $.get('./baby/baby.text', function(data) {
             var urls = data.split("\n");
             var count = urls.length;
-            var html = '';
+            var html = '<div class="wrapper"><a href="./index.image.html" target="_blank">点击查看照片</a></div>';
             for (var i=0;i<count-1;i++) {
                 html += '<div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="'+domain+urls[i]+'"></video></div>';
             }
