@@ -8,6 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
+.img-wrapper{
+    width:100%;
+    position:relative;
+    text-align: center;
+    margin-top: 5px;
+}
 .wrapper{
     width:100%;background: #000;
     position:relative;
@@ -32,7 +38,7 @@
         $.get('./baby/baby.text', function(data) {
             var urls = data.split("\n");
             var count = urls.length;
-            var html = '<div class="wrapper"><a href="./index.image.html" target="_blank">点击查看照片</a></div>';
+            var html = '<div class="img-wrapper"><a href="./index.image.html" target="_blank">点击查看照片</a></div>';
             for (var i=0;i<count-1;i++) {
                 html += '<div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="'+domain+urls[i]+'"></video></div>';
             }
@@ -50,7 +56,7 @@
             }
         });
             // var count = 3;
-            // var html = '';
+            // var html = '<div class="img-wrapper"><a href="./index.image.html" target="_blank">点击查看照片</a></div>';
             // for (var i=0;i<count-1;i++) {
             //     html += '<div><div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="http://on5ldvklg.bkt.clouddn.com/baby/video/201808/75003EF7E50632A279865343476FE562.mp4"></video></div></div>';
             // }
