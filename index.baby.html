@@ -6,8 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript">
-</script>
+<script src="./jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
 	.center {
         position: absolute;
@@ -21,11 +20,16 @@
 </style>
 </head>
 <body>
-	<div class="center">
-		<a href="./index.baby.html" target="_blank"><img src="./images/img_baby_cover.jpg" width="100" height="70"></a>
-		<a href="./index.house.html" target="_blank"><img src="./images/img_house_cover.jpg" width="100" height="70"></a>
-		<a href="./index.blog.html" target="_blank"><img src="./images/img_blog_cover.jpg" width="100" height="70"></a>
+	<div class="center videoContainer">
+		<div><video width="160" src="" controls="controls"></video></div>
 	</div>
 	
 </body>
+<script type="text/javascript">
+    $(document).ready(function(){
+       $.get('./baby/baby.text', function(data) {
+        console.info(data);
+      });
+    });
+</script>
 </html>
