@@ -8,35 +8,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
-.vid-wrap{
+.wrapper{
     width:100%;background: #000;
     position:relative;
-    /*padding-bottom:56.25%;*/
+    /*padding-top: 5px;*/
+    margin-top: 5px;
+    padding-bottom:56.25%;
 }
-.vid-wrap video{
+.wrapper video{
     position: absolute;
     top:0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%
 }
-
 </style>
 </head>
 <body>
-    <div class="vid-wrap"></div>
+    <div class="container" style="height: 300px;overflow:auto"></div>
 </body>
 <script type="text/javascript">
     $(document).ready(function(){
         var domain = 'http://on5ldvklg.bkt.clouddn.com/';
-       $.get('./baby/baby.text', function(data) {
-        var urls = data.split("\n");
-        var html = '';
-        for (var i = urls.length - 1; i >= 0; i--) {
-            html += '<div><video controls preload="meta"><source src="'+domain+urls[i]+'" type="video/mp4"></video></div>';
-        }
-        $('.vid-wrap').html(html);
-      });
+        $.get('./baby/baby.text', function(data) {
+            var urls = data.split("\n");
+            var count = urls.length;
+            var html = '';
+            for (var i=0;i<count-1;i++) {
+                html += '<div class="wrapper"><video id="videoId"'+i+'" controls preload="meta" src="'+domain+urls[i]+'"></video></div>';
+            }
+            $('.container').html(html);
+            for(var j=0;j<count-1;j++) {
+                $("#videoId"+j).on("loadeddata", function (e) {
+                    var obj = e.target;
+                    var scale = 0.8;
+                    var canvas = document.createElement("canvas");
+                    canvas.width = obj.videoWidth * scale;
+                    canvas.height = obj.videoHeight * scale;
+                    canvas.getContext('2d').drawImage(obj, 0, 0, canvas.width, canvas.height);
+                    obj.setAttribute("poster", canvas.toDataURL("image/png"));
+                })
+            }
+        });
     });
 </script>
 </html>
