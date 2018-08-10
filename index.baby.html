@@ -27,6 +27,12 @@
     width: 100%;
     height: 100%
 }
+.header{
+    color: #969696;
+    border-style:dashed;
+    width:100%;
+    size: 1;
+}
 </style>
 </head>
 <body>
@@ -39,11 +45,20 @@
             var urls = data.split("\n");
             var count = urls.length;
             var html = '<div class="img-wrapper"><a href="./index.image.html" target="_blank">点击查看照片</a></div>';
-            for (var i=0;i<count-1;i++) {
+            var moonth = 0;
+            var tmp = 0;
+            for (var i=0;i<count;i++) {
+                tmp = urls[i].split('/')[2];
+                if (tmp!=moonth) {
+                    moonth = tmp;
+                    var year = moonth.substr(0,4);
+                    var mth = moonth.substr(4,6);
+                    html += '<div ><hr class="header"><div style="text-align:center;font-family: zapfino;">'+year+'-'+mth+'</div><hr class="header"></div>';
+                }
                 html += '<div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="'+domain+urls[i]+'"></video></div>';
             }
             $('.container').html(html);
-            for(var j=0;j<count-1;j++) {
+            for(var j=0;j<count;j++) {
                 $("#videoId"+j).on("loadeddata", function (e) {
                     var obj = e.target;
                     var scale = 0.8;
@@ -55,13 +70,26 @@
                 })
             }
         });
-            // var count = 3;
+            // var urls = new Array('baby/video/201808/75003EF7E50632A279865343476FE562.mp4',
+            //             'baby/video/201808/75003EF7E50632A279865343476FE562.mp4',
+            //             'baby/video/201807/56DB59B34F05DA660471338FDCA57615.mp4',
+            //             'baby/video/201806/3F209E90356A98D726ABDAADE987CD2D.mp4');
+            // var count = urls.length;
             // var html = '<div class="img-wrapper"><a href="./index.image.html" target="_blank">点击查看照片</a></div>';
-            // for (var i=0;i<count-1;i++) {
-            //     html += '<div><div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="http://on5ldvklg.bkt.clouddn.com/baby/video/201808/75003EF7E50632A279865343476FE562.mp4"></video></div></div>';
+            // var moonth = 0;
+            // var tmp = 0;
+            // for (var i=0;i<count;i++) {
+            //     tmp = urls[i].split('/')[2];
+            //     if (tmp!=moonth) {
+            //         moonth = tmp;
+            //         var year = moonth.substr(0,4);
+            //         var mth = moonth.substr(4,6);
+            //         html += '<div ><hr class="header"><div style="text-align:center;font-family: zapfino;">'+year+'-'+mth+'</div><hr class="header"></div>';
+            //     }
+            //     html += '<div><div class="wrapper"><video id="videoId"'+i+' controls preload="meta" src="'+urls[i]+'"></video></div></div>';
             // }
             // $('.container').html(html);
-            // for(var j=0;j<count-1;j++) {
+            // for(var j=0;j<count;j++) {
             //     $("#videoId"+j).on("loadeddata", function (e) {
             //         var obj = e.target;
             //         var scale = 0.8;
