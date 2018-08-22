@@ -87,16 +87,18 @@
 
 
             $.get('./baby/baby.image.text', function(data) {
-                var urls = data.split("\n");
-                var data = {list: urls};
-                var html = template('template', data);
-                document.getElementById('baby_image').innerHTML = html;
-
-                ScaleSlider();
-
-                $(window).bind("load", ScaleSlider);
-                $(window).bind("resize", ScaleSlider);
-                $(window).bind("orientationchange", ScaleSlider);
+                setTimeout(function(){
+                    var urls = data.split("\n");
+                    var data = {list: urls};
+                    var html = template('template', data);
+                    document.getElementById('baby_image').innerHTML = html;
+                    setTimeout(function(){
+                        ScaleSlider();
+                        $(window).bind("load", ScaleSlider);
+                        $(window).bind("resize", ScaleSlider);
+                        $(window).bind("orientationchange", ScaleSlider);
+                    },200);
+                },20);
             });
         })
 
