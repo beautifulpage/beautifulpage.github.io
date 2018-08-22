@@ -68,6 +68,26 @@
                 <img data-u="image" src="img/004.jpg" />
                 <img data-u="thumb" src="img/004-s99x66.jpg" />
             </div> -->
+            <div>
+                <img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/IMG_20180519_131326.jpg" />
+                <img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/IMG_20180519_131326.jpg?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" />
+            </div>
+        
+            <div>
+                <img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/IMG_20180728_132337.jpg" />
+                <img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/IMG_20180728_132337.jpg?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" />
+            </div>
+        
+            <div>
+                <img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180820/6587B5BA723C1E557DE69E953DE0D741.jpg" />
+                <img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180820/6587B5BA723C1E557DE69E953DE0D741.jpg?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" />
+            </div>
+        
+            <div>
+                <img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180820/81F9590478CC5F2A7EF6A6D0441579DD.jpg" />
+                <img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180820/81F9590478CC5F2A7EF6A6D0441579DD.jpg?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" />
+            </div>
+        
         </div>
         <!-- Thumbnail Navigator -->
         <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;top:0px;width:240px;height:480px;background-color:#000;" data-autocenter="2" data-scale-left="0.75">
@@ -155,7 +175,10 @@
                     window.setTimeout(ScaleSlider, 30);
                 }
             }
-
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
             $.get('./baby/baby.image.text', function(data) {
                 var urls = data.split("\n");
                 var data = {list: urls};
