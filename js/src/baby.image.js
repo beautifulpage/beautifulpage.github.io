@@ -1,26 +1,4 @@
 jQuery(document).ready(function ($) {
-            var domain = 'http://on5ldvklg.bkt.clouddn.com/';
-            $.get('./baby/baby.image.text', function(data) {
-                var urls = data.split("\n");
-                var count = urls.length;
-                var html = '';
-                var moonth = 0;
-                var tmp = 0;
-                for (var i=0;i<count;i++) {
-                    tmp = urls[i].split('/')[2];
-                    if (tmp!=moonth) {
-                        moonth = tmp;
-                        var year = moonth.substr(0,4);
-                        var mth = moonth.substr(4,6);
-                        html += '<div ><hr class="header"><div style="text-align:center;font-family: zapfino;">'+year+'-'+mth+'</div><hr class="header"></div>';
-                    }
-                    html += '<div><img data-u="image" src="'+domain+urls[i]+'" /><img data-u="thumb" src="'+domain+urls[i]+'/0/w/99/h/66" /></div>';
-                }
-                console.info(html);
-                $('.baby_image').html(html);
-            });
-
-
             var jssor_1_SlideshowTransitions = [
               {$Duration:1200,$Zoom:1,$Easing:{$Zoom:$Jease$.$InCubic,$Opacity:$Jease$.$OutQuad},$Opacity:2},
               {$Duration:1000,$Zoom:11,$SlideOut:true,$Easing:{$Zoom:$Jease$.$InExpo,$Opacity:$Jease$.$Linear},$Opacity:2},
