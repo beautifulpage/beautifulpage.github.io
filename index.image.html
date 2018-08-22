@@ -17,24 +17,12 @@
     <script id="template" type="text/html"> 
         {{each list as value i}}
             <div>
-                <img data-u="image" src="{{value}}" />
-                <img data-u="thumb" src="{{value}}?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" />
+                <img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/{{value}}" />
+                <img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/{{value}}?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" />
             </div>
         {{/each}}
     </script>
     <script type="text/javascript">
-    //  $(document).ready(function(){
-    //     var domain = 'http://on5ldvklg.bkt.clouddn.com/';
-    //     $.get('./baby/baby.image.text', function(data) {
-    //         var urls = data.split("\n");
-    //         var count = urls.length;
-    //         var html = '';
-    //         for (var i=0;i<count;i++) {
-    //             html += '<div><img data-u="image" src="'+domain+urls[i]+'" /><img data-u="thumb" src="'+domain+urls[i]+'?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" /></div>';
-    //         }
-    //         $('#baby_image').html(html);
-    //     });
-    // });
         $.get('./baby/baby.image.text', function(data) {
             var urls = data.split("\n");
             var data = {list: urls};
@@ -123,18 +111,4 @@
     </div>
     <!-- #endregion Jssor Slider End -->
 </body>
-<!-- <script type="text/javascript">
-    $(document).ready(function(){
-        var domain = 'http://on5ldvklg.bkt.clouddn.com/';
-        $.get('./baby/baby.image.text', function(data) {
-            var urls = data.split("\n");
-            var count = urls.length;
-            var html = '';
-            for (var i=0;i<count;i++) {
-                html += '<div><img data-u="image" src="'+domain+urls[i]+'" /><img data-u="thumb" src="'+domain+urls[i]+'?imageMogr2/auto-orient/thumbnail/99x66!/blur/1x0/quality/75|imageslim" /></div>';
-            }
-            $('#baby_image').html(html);
-        });
-    });
-</script> -->
 </html>
