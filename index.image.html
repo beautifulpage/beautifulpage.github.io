@@ -259,13 +259,13 @@
             $(window).bind("load", ScaleSlider);
             $(window).bind("resize", ScaleSlider);
             $(window).bind("orientationchange", ScaleSlider);
-            $.get('./baby/baby.image.text', function(data) {
-                var urls = data.split("\n");
-                var data = {list: urls};
-                var html = template('template', data);
-                console.info(html);
-                //document.getElementById('baby_image').innerHTML = html;
-            });
+            // $.get('./baby/baby.image.text', function(data) {
+            //     var urls = data.split("\n");
+            //     var data = {list: urls};
+            //     var html = template('template', data);
+            //     console.info(html);
+            //     //document.getElementById('baby_image').innerHTML = html;
+            // });
         })
 
     </script>
