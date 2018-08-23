@@ -13,6 +13,26 @@
    <!--  <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script> -->
     <script src="./jquery/1.11.3/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="./js/src/template/template-web.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+        function resizeimg(obj,maxW,maxH){
+            var imgW=obj.width;
+            var imgH=obj.height;
+            if(imgW>maxW||imgH>maxH){       
+                  var ratioA=imgW/maxW;
+                  var ratioB=imgH/maxH;               
+                  if(ratioA>ratioB){
+                   imgW=maxW;
+                   imgH=maxW*(imgH/imgW);
+                  }
+                  else{
+                       imgH=maxH;
+                       imgW=maxH*(imgW/imgH);
+                  }  
+                  obj.width=imgW;
+                  obj.height=imgH;
+            }
+        }
+    </script>
     <script id="template" type="text/html"> 
         {{each list as value i}}<div class="imgDiv"><img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/{{value}}?imageMogr2/auto-orient/thumbnail/720x480/blur/1x0/quality/75|imageslim" /><img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/{{value}}?imageMogr2/auto-orient/thumbnail/99x66/blur/1x0/quality/75|imageslim" /></div>
         {{/each}}
@@ -259,24 +279,6 @@
             $(window).bind("load", ScaleSlider);
             $(window).bind("resize", ScaleSlider);
             $(window).bind("orientationchange", ScaleSlider);
-            function resizeimg(obj,maxW,maxH){
-                var imgW=obj.width;
-                var imgH=obj.height;
-                if(imgW>maxW||imgH>maxH){       
-                      var ratioA=imgW/maxW;
-                      var ratioB=imgH/maxH;               
-                      if(ratioA>ratioB){
-                       imgW=maxW;
-                       imgH=maxW*(imgH/imgW);
-                      }
-                      else{
-                           imgH=maxH;
-                           imgW=maxH*(imgW/imgH);
-                      }  
-                      obj.width=imgW;
-                      obj.height=imgH;
-                }
-            }
             $.get('./baby/baby.image.text', function(data) {
                 var urls = data.split("\n");
                 var data = {list: urls};
