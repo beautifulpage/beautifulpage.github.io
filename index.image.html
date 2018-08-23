@@ -66,7 +66,7 @@
                 <img data-u="thumb" src="img/004-s99x66.jpg" />
             </div> -->
               
-        <div class="imgDiv"><img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-253838cb439a1001.jpg?imageMogr2/auto-orient/thumbnail/720x480/blur/1x0/quality/75|imageslim" /><img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-253838cb439a1001.jpg?imageMogr2/auto-orient/thumbnail/99x66/blur/1x0/quality/75|imageslim" /></div>
+        <div class="imgDiv"><img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-253838cb439a1001.jpg" onload="resizeimg(this,720,480);"/><img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-253838cb439a1001.jpg?imageMogr2/auto-orient/thumbnail/99x66/blur/1x0/quality/75|imageslim" /></div>
          <!--  <div class="imgDiv"><img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-254c0f3f28bceab9.jpg?imageMogr2/auto-orient/thumbnail/720x480/blur/1x0/quality/75|imageslim" /><img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-254c0f3f28bceab9.jpg?imageMogr2/auto-orient/thumbnail/99x66/blur/1x0/quality/75|imageslim" /></div>
         <div class="imgDiv"><img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-4a9606e76d8b02dc.jpg?imageMogr2/auto-orient/thumbnail/720x480/blur/1x0/quality/75|imageslim" /><img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-4a9606e76d8b02dc.jpg?imageMogr2/auto-orient/thumbnail/99x66/blur/1x0/quality/75|imageslim" /></div>
         <div class="imgDiv"><img data-u="image" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-a64587ce0c9fb29.jpg?imageMogr2/auto-orient/thumbnail/720x480/blur/1x0/quality/75|imageslim" /><img data-u="thumb" src="http://on5ldvklg.bkt.clouddn.com/baby/image/201808/20180822/-a64587ce0c9fb29.jpg?imageMogr2/auto-orient/thumbnail/99x66/blur/1x0/quality/75|imageslim" /></div>
@@ -259,13 +259,31 @@
             $(window).bind("load", ScaleSlider);
             $(window).bind("resize", ScaleSlider);
             $(window).bind("orientationchange", ScaleSlider);
-            // $.get('./baby/baby.image.text', function(data) {
-            //     var urls = data.split("\n");
-            //     var data = {list: urls};
-            //     var html = template('template', data);
-            //     console.info(html);
-            //     //document.getElementById('baby_image').innerHTML = html;
-            // });
+            function resizeimg(obj,maxW,maxH){
+                var imgW=obj.width;
+                var imgH=obj.height;
+                if(imgW>maxW||imgH>maxH){       
+                      var ratioA=imgW/maxW;
+                      var ratioB=imgH/maxH;               
+                      if(ratioA>ratioB){
+                       imgW=maxW;
+                       imgH=maxW*(imgH/imgW);
+                      }
+                      else{
+                           imgH=maxH;
+                           imgW=maxH*(imgW/imgH);
+                      }  
+                      obj.width=imgW;
+                      obj.height=imgH;
+                }
+            }
+            $.get('./baby/baby.image.text', function(data) {
+                var urls = data.split("\n");
+                var data = {list: urls};
+                var html = template('template', data);
+                console.info(html);
+                //document.getElementById('baby_image').innerHTML = html;
+            });
         })
 
     </script>
