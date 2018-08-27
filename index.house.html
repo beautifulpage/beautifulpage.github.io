@@ -15,27 +15,26 @@
 {"priority":"2","title":"凤凰牡丹园","time":"-","amount":"1000","propertyFee":"2.1","address":"新六大街与新七大街交汇处","mark":""},
 {"priority":"3","title":"林溪佳苑(尾盘)","time":"2017-06-24","amount":"1100","propertyFee":"2.2","address":"新六大街与新一路交汇处向西350米","mark":""},
 {"priority":"4","title":"楚城天街","time":"-","amount":"200","propertyFee":"1.8","address":"羊山新区南京大道与新十六街交汇处","mark":""},
-{"priority":"5","title":"幸福玫瑰园","time":"-","amount":"578","propertyFee":"1.8","address":"新二十二大街与新十一大道交叉口西北角","mark":""},
+{"priority":"5","title":"幸福玫瑰园","time":"-","amount":"578","propertyFee":"1.8","address":"新二十二大街与新十一大道交叉口西北角","mark":"","color":"red"},
 {"priority":"6","title":"中乐百花公馆 ","time":"2018下半年","amount":"1470","propertyFee":"1.2","address":"新七大道百花会展中心东侧","mark":""},
 {"priority":"7","title":"万国六号公馆","time":"-","amount":"636","propertyFee":"1.8","address":"新七大道与新二十二大街交会处南200米（恒大名都旁）","mark":"未查到"},
 {"priority":"8","title":"大信桂竹园","time":"-","amount":"1900","propertyFee":"1.8","address":"新七大道与新二十二大街交汇处","mark":""},
 {"priority":"9","title":"中梁申州壹号院","time":"2018-05-05","amount":"1000","propertyFee":"1.9","address":"新五大道与三十二街交叉口","mark":""},
 {"priority":"10","title":"中环荣域","time":"-","amount":"1148","propertyFee":"1.2","address":"新七大道与三十街交汇处","mark":""},
-{"priority":"11","title":"思达观山悦","time":"-","amount":"350","propertyFee":"1.1","address":"第六大道与新一路交叉口东100米","mark":""},
+{"priority":"11","title":"观山悦","time":"2018-08-24","amount":"350","propertyFee":"1.1","address":"第六大道与新一路交叉口东100米","mark":"","color":"red"},
 {"priority":"12","title":"九悦鸿城","time":"2015-04-10","amount":"460","propertyFee":"1.2","address":"新二十四大街与新七大道交汇处南300米路东 ","mark":""},
-{"priority":"13","title":"富华金域府","time":"2018-01-27","amount":"3508","propertyFee":"2.1","address":"工区路与拱桥路交会处","mark":""},
+{"priority":"13","title":"富华金域府","time":"2018-01-27","amount":"3508","propertyFee":"2.1","address":"工区路与拱桥路交会处","mark":"关注","color":"red"},
 {"priority":"14","title":"华仪富丽华城","time":"2015-02-10","amount":"3370","propertyFee":"0.4","address":"航空路东路以北","mark":""},
 {"priority":"15","title":"御景阳光","time":"2017-12-28","amount":"472","propertyFee":"1.6","address":"鸡公山大街与三里店路交汇处","mark":"有小学、初中、高中及其他小区，发展后劲不足"},
-{"priority":"16","title":"东方今典中央城\n","time":"2018-05","amount":"880","propertyFee":"1.2","address":"新十一大道和新二十大街交汇处","mark":"物业垃圾，绑定车位，房屋质量待考证"},
+{"priority":"16","title":"东方今典中央城","time":"2018-05","amount":"880","propertyFee":"1.2","address":"新十一大道和新二十大街交汇处","mark":"物业垃圾，绑定车位，房屋质量待考证"},
 {"priority":"17","title":"信合湖东春天","time":"2018-05","amount":"1955","propertyFee":"-","address":"鸡公山大街中段（气象局对面）","mark":""},
 {"priority":"18","title":"龙跃河山","time":"2018-05","amount":"-","propertyFee":"0.98","address":"民权路斜拉桥与滨河路交叉口向东300米","mark":"后面有龟山和陵园、入户人数不详"},
-{"priority":"19","title":"东方花园","time":"2018-05","amount":"1041","propertyFee":"1.2","address":"南京路与龙江路交汇处南100米","mark":"发展后劲可能不足，学区房非有名学校"},
+{"priority":"19","title":"东方花园","time":"2018-05","amount":"1041","propertyFee":"1.2","address":"南京路与龙江路交汇处南100米","mark":"发展后劲可能不足，学区房非有名学校","color":"red"},
 {"priority":"20","title":"公园春晓","time":"2018下半年","amount":"1000","propertyFee":"-","address":"新二十四大街与新十一大街的交汇处","mark":""},
 {"priority":"21","title":"龙江帝景","time":"2017-01-01","amount":"320","propertyFee":"1.2","address":"龙江路金波湾酒店对面","mark":"50年产权"},
 {"priority":"22","title":"名鑫佳苑","time":"2017-06","amount":"1234","propertyFee":"1.8","address":"新马路38号","mark":"50年产权，不能落户，上学有问题"},
 {"priority":"23","title":"建业城","time":"-","amount":"1063","propertyFee":"-","address":"滨河南路琵琶山琴桥西500米","mark":"太偏，升值空间不大"},
-{"priority":"24","title":"印象欧洲","time":"-","amount":"4000","propertyFee":"-","address":"羊山大道(新六大街)与中环路(新七大道)交汇处西北","mark":"证难下，基本小产权，很多二手售卖"},
-{"priority":"25","title":"观山悦","time":"2018-08-24","amount":"8000","propertyFee":"-","address":"第六大道与新一路交叉口东100米","mark":""}
+{"priority":"24","title":"印象欧洲","time":"-","amount":"4000","propertyFee":"-","address":"羊山大道(新六大街)与中环路(新七大道)交汇处西北","mark":"证难下，基本小产权，很多二手售卖"}
 ];
 
     if (typeof(console) == "undefined") {
@@ -1406,7 +1405,11 @@ function preventDefault(a) {
 $(document).ready(function(){ 
 　　for (var i = 0; i < markerArr.length; i++) {
             var markeri = markerArr[i];
-            $('#detail_tb tbody').append('<tr><td>'+markeri.priority+'</td><td>'+markeri.title+'</td><td>'+markeri.time+'</td><td>'+markeri.amount+'</td><td>'+markeri.propertyFee+'</td><td>'+markeri.address+'</td><td>'+markeri.mark+'</td></tr>');
+            var style;
+            if (markeri.color != null) {
+                style = 'style="color: red"';
+            }
+            $('#detail_tb tbody').append('<tr '+style+'><td>'+markeri.priority+'</td><td>'+markeri.title+'</td><td>'+markeri.time+'</td><td>'+markeri.amount+'</td><td>'+markeri.propertyFee+'</td><td>'+markeri.address+'</td><td>'+markeri.mark+'</td></tr>');
      }
 });
 </script> 
